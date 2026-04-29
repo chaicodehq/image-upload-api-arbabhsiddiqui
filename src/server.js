@@ -1,13 +1,17 @@
+import dotenv from "dotenv";
+dotenv.config({ path: ".env" });
+
 import { createApp } from './app.js';
 import { connectDB } from './db/connect.js';
+import mongoose from 'mongoose';
 
 async function start() {
   try {
     // TODO: Read PORT from process.env, default to 3000
-    const port = undefined;
+    const port = process.env.PORT || 3000;
 
     // TODO: Read MONGO_URI from process.env, default to "mongodb://localhost:27017/image_upload_api"
-    const uri = undefined;
+    const uri = process.env.MONGO_URI || "mongodb://localhost:27017/image_upload_api";
 
     await connectDB(uri);
     const app = createApp();

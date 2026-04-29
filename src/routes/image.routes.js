@@ -23,6 +23,13 @@ import { validateObjectId } from '../middlewares/validateObjectId.middleware.js'
 
 const router = Router();
 
+router.post('/', upload.single('image'), uploadImage);
+router.get('/', listImages);
+router.get('/:id', validateObjectId, getImage);
+router.get('/:id/download', validateObjectId, downloadImage);
+router.get('/:id/thumbnail', validateObjectId, downloadThumbnail);
+router.delete('/:id', validateObjectId, deleteImage);
+
 // Your routes here
 
 export default router;

@@ -1,0 +1,13 @@
+{
+  "name": "Node + image + Mongo Dev",
+  "dockerComposeFile": "../docker-compose.yml",
+  "service": "app",
+  "workspaceFolder": "/app",
+
+  "shutdownAction": "stopCompose",
+
+  "extensions": [
+    "ms-azuretools.vscode-docker",
+    "dbaeumer.vscode-eslint"
+  ]
+}

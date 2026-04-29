@@ -5,4 +5,5 @@
  */
 export function notFound(req, res) {
   // Your code here
+  res.status(404).json({ error: { message: "Route not found" } })
 }
